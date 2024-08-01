@@ -1,7 +1,7 @@
 import React from "react";
-
+require("dotenv").config();
 const useIpProvider = () => {
-  const SERVER_IP = "172.17.31.131:3001";
+  const SERVER_IP = process.env.API;
   return SERVER_IP;
 };
 

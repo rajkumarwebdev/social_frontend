@@ -7,7 +7,8 @@ import { faArrowLeft, faPaperPlane } from "@fortawesome/free-solid-svg-icons";
 import { useProfile } from "../../../hooks/UserContext";
 import axiosInstance from "../../../axiosInstance";
 import useIpProvider from "../../../hooks/useIpProvider";
-var socket = io("http://172.17.31.131:3032");
+require("dotenv").config();
+var socket = io(process.env.API);
 var socketid = "";
 
 socket.on("typing-event", (status) => {
@@ -160,7 +161,7 @@ const ChatInterface = () => {
               src={
                 userProfile != "/images/userprofile.png"
                   ? `http://${ip}/images/` + userProfile
-                  :"/images/userprofile.png"
+                  : "/images/userprofile.png"
               }
               alt="user-profile"
               width="50px"
