@@ -1,7 +1,7 @@
 import React from "react";
-require("dotenv").config();
+const apiUrl = import.meta.env.VITE_API_URL;
 const useIpProvider = () => {
-  const SERVER_IP = process.env.API;
+  const SERVER_IP = apiUrl;
   return SERVER_IP;
 };
 

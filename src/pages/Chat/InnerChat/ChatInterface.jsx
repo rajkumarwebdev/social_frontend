@@ -7,8 +7,9 @@ import { faArrowLeft, faPaperPlane } from "@fortawesome/free-solid-svg-icons";
 import { useProfile } from "../../../hooks/UserContext";
 import axiosInstance from "../../../axiosInstance";
 import useIpProvider from "../../../hooks/useIpProvider";
-require("dotenv").config();
-var socket = io(process.env.API);
+const apiUrl = import.meta.env.VITE_API_URL;
+var socket = io(apiUrl);
+
 var socketid = "";
 
 socket.on("typing-event", (status) => {

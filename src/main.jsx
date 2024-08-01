@@ -7,8 +7,7 @@ import UserProvider from "./hooks/UserContext.jsx";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
-
-    <Router>
+    <Router basename="/social_frontend">
       <UserProvider>
         <App />
       </UserProvider>
